@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="theme_color" content="#2a9fd6">
     <title>Inheritance</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/resources/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/resources/icons/favicon-32x32.png">
@@ -22,7 +23,6 @@
     <meta name="application-name" content="Inheritance">
     <meta name="apple-mobile-web-app-title" content="Inheritance">
     <meta name="msapplication-starturl" content="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
     <div id="mainHeader">
@@ -31,8 +31,8 @@
             <div class="col-lg-6 mx-auto">
             <h3 class="lead mb-4">Feel the Soul-stirring Culture of Virtue and Benevolence;<br>Sense the Breathtaking Beauty of War and Peace.</h3>
             <div class="d-grid gap-2">
-                <button type="button" class="btn btn-success btn-lg px-4 gap-3">Story Mode</button>
-                <button type="button" class="btn btn-outline-dark btn-lg px-4 mt-2">Detail Mode</button>
+                <button type="button" class="btn btn-success btn-lg px-4 gap-3" onclick="location.href='/storyline.html'">Story Mode</button>
+                <button type="button" class="btn btn-outline-dark btn-lg px-4 mt-2 text-white" style="border-width: 2px;">Detail Mode</button>
             </div>
             </div>
         </div>
@@ -41,14 +41,5 @@
 </body>
 
 <script src="/js/app.js"></script>
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js').then(function(reg) {
-            console.log('Successfully registered service worker', reg);
-        }).catch(function(err) {
-            console.warn('Error whilst registering service worker', err);
-        });
-    }
-</script>
 
 </html>
