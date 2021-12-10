@@ -2,7 +2,6 @@ html, body {
     margin: 0;
     font-family: 'Catamaran', sans-serif;
     font-size: large;
-    margin: 0 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     user-select: none;
@@ -12,7 +11,7 @@ html, body {
 
 
 #mainHeader {
-    background-image: url('/resources/background/e5e37daf-8d89-4cd6-a7a1-cb3a514b931b.jpeg');
+    background-image: url('/resources/background/forbidden_city.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -67,6 +66,11 @@ html, body {
         padding-top: 8rem;
     }
 }
+@media (max-width: 600px) and (min-width: 400px) and (min-height: 600px) and (max-height: 800px) {
+    #mainHeader {
+        padding-top: 6rem;
+    }
+}
 @media (max-width: 400px) and (min-height: 800px) {
     #mainHeader {
         padding-top: 6rem;
@@ -77,9 +81,14 @@ html, body {
         padding-top: 5rem;
     }
 }
-@media (max-width: 400px) and (max-height: 600px) {
+@media (max-width: 400px) and (max-height: 600px) and (min-width: 300px) {
     #mainHeader {
         padding-top: 3rem;
+    }
+}
+@media (max-width: 300px) {
+    #mainHeader {
+        padding-top: 1rem;
     }
 }
 
