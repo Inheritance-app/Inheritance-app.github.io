@@ -1,0 +1,169 @@
+html, body {
+    margin: 0;
+    font-family: 'Catamaran', sans-serif;
+    font-size: large;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    height: 100%;
+    overscroll-behavior: none;
+}
+
+
+#mainHeader {
+    background-image: url('/resources/background/forbidden_city.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    filter: blur(10px);
+    -moz-filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -webkit-animation: blur 2s;  
+    -moz-animation: blur 2s;
+    animation: blur 2s;
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;  
+    animation-fill-mode: forwards;  
+}
+#mainHeaderContent {
+    opacity: 0;
+    -webkit-animation: opacity 2s;  
+    -moz-animation: opacity 2s;
+    animation: opacity 2s;
+    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;  
+    animation-fill-mode: forwards; 
+}
+.contraBlur {
+    opacity: 0;
+    -webkit-animation: contra-blur 2s;  
+    -moz-animation: contra-blur 2s;
+    animation: contra-blur 2s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;  
+    animation-fill-mode: forwards; 
+}
+
+
+@media (min-width: 600px) {
+    #mainHeader {
+        padding-top: 10rem;
+    }
+}
+@media (max-width: 600px) and (min-width: 400px) {
+    #mainHeader {
+        padding-top: 8rem;
+    }
+}
+@media (max-width: 600px) and (min-width: 400px) and (min-height: 600px) and (max-height: 800px) {
+    #mainHeader {
+        padding-top: 6rem;
+    }
+}
+@media (max-width: 400px) and (min-height: 800px) {
+    #mainHeader {
+        padding-top: 6rem;
+    }
+}
+@media (max-width: 400px) and (min-height: 600px) and (max-height: 800px) {
+    #mainHeader {
+        padding-top: 5rem;
+    }
+}
+@media (max-width: 400px) and (max-height: 600px) and (min-width: 300px) {
+    #mainHeader {
+        padding-top: 3rem;
+    }
+}
+@media (max-width: 300px) {
+    #mainHeader {
+        padding-top: 1rem;
+    }
+}
+
+@-webkit-keyframes blur {
+    0% { 
+          -webkit-filter: blur(10px);
+      }
+    100% { 
+          -webkit-filter: blur(0px); 
+      }
+  }
+  
+  @-moz-keyframes blur {
+    0% { 
+          -moz-filter: blur(10px);
+      }
+    100% { 
+          -moz-filter: blur(0px); 
+      }
+  }
+  
+  @keyframes blur {
+    0% { 
+          filter: blur(10px);
+      }
+    100% { 
+          filter: blur(0px); 
+      }
+}
+@-webkit-keyframes opacity {
+    0% { 
+          opacity: 0;
+      }
+    100% { 
+          opacity: 1;
+      }
+  }
+  
+  @-moz-keyframes opacity {
+    0% { 
+          opacity: 0;
+      }
+    100% { 
+          opacity: 1;
+      }
+  }
+  
+  @keyframes opacity {
+    0% { 
+          opacity: 0;
+      }
+    100% { 
+          opacity: 1;
+      }
+}
+
+@-webkit-keyframes contra-blur {
+    0% { 
+          -webkit-filter: blur(0px);
+      }
+    100% { 
+          -webkit-filter: blur(10px); 
+      }
+  }
+  
+  @-moz-keyframes contra-blur {
+    0% { 
+          -moz-filter: blur(0px);
+      }
+    100% { 
+          -moz-filter: blur(10px); 
+      }
+  }
+  
+  @keyframes contra-blur {
+    0% { 
+          filter: blur(0px);
+      }
+    100% { 
+          filter: blur(10px); 
+      }
+}
