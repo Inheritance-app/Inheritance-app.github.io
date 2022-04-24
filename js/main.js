@@ -19,19 +19,29 @@ function openFullscreen() {
     }
 }
 
-// function animation(x) {
-//   switch (x) {
-//     case 1:
-//       document.getElementById('story-header').classList.add('animate__animated', 'animate__zoomOutUp');
-//       document.getElementById('mainContainer').classList.remove('d-none');
-//       document.getElementById('mainContainer').classList.add('animate__animated', 'animate__zoomInDown', 'd-flex');
-//       break;
-//     case 2:
-//       break;
-//     default:
-//       break;
-//   }
-// }
+
+
+
+function changePage(x) {
+  switch(x) {
+    case 1:
+      let x = document.getElementById('cover');
+      x.style.zIndex = "5";
+      x.classList.add('animate__animated', 'animate__fadeIn');
+      setTimeout(function () {
+        window.location.assign('storyline.html');
+      }, 2000);
+      break;
+    case 2:
+      window.location.assign('index.html');
+    default:
+      break;
+  }
+}
+
+
+
+
 
 // Particles
 
@@ -107,6 +117,7 @@ update = function () {
   requestAnimationFrame(update);
 };
 requestAnimationFrame(update);
+
 
 
 

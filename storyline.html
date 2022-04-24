@@ -30,13 +30,14 @@
     <meta name="application-name" content="Inheritance">
     <meta name="apple-mobile-web-app-title" content="Inheritance">
     <meta name="msapplication-starturl" content="/">
-    <!-- <link rel="stylesheet" href="/splide-3.6.12/dist/css/splide.min.css">
-    <script src="/splide-3.6.12/dist/js/splide.min.js"></script>
-    <script src="/js/splide.js"></script> -->
+
 
     <style>
       [hidden] {
       display: inherit !important;
+      }
+      .reveal p {
+        line-height: 1 !important;
       }
     </style>
     <script>
@@ -51,9 +52,51 @@
 
 </head>
 <body>
-  
 
-    <div class="d-none position-relative overflow-hidden p-3 text-center bg-light" id="story-header">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(function () {
+        document.getElementById('cover2').style.zIndex = "-10";
+        document.getElementById('backbtn').style.display = "block";
+      }, 8000);
+      $('#instruction1').on('hide.bs.modal', function (e) {
+        $('#instruction2').modal('show');
+      })
+      $('#instruction2').on('hide.bs.modal', function (e) {
+        $('#instruction3').modal('show');
+      })
+      $('#instruction3').on('hide.bs.modal', function (e) {
+        $('#instruction4').modal('show');
+      })
+      $('#instruction4').on('hide.bs.modal', function (e) {
+        $('#instruction5').modal('show');
+      })
+      $('#instruction5').on('hide.bs.modal', function (e) {
+        $('#instruction6').modal('show');
+      })
+    });
+
+    function animation(x) {
+      switch (x) {
+        case 1:
+          document.getElementById('story-header').classList.add('animate__animated', 'animate__zoomOutUp');
+          document.getElementById('mainContainer').classList.remove('d-none');
+          document.getElementById('mainContainer').classList.add('animate__animated', 'animate__zoomInDown', 'd-flex');
+          setTimeout(function () {
+            $('#instruction1').modal('show');
+          }, 1500);
+          break;
+        default:
+          break;
+      }
+    }
+    
+
+
+  </script>
+  
+<!--  -->
+    <div class="d-block position-relative overflow-hidden p-3 text-center bg-light" id="story-header">
         <div class="row row-cols-1 p-5 mx-auto" id="header-content">
           <h1 class="p-3">China: Rise of Culture</h1>
           <p class="p-3" style="color: white;">From the ancient Central Plains civilizations to the modern People's Republic, China shines like the brightest star in the night-sky.</p>
@@ -62,7 +105,119 @@
         </div>
     </div>
 
-    <div id="mainContainer" class="d-block flex-row align-items-stretch">
+    <div id="cover2" class="d-flex align-items-center justify-content-center p-2">
+      <div id="cover4">
+        <div id="cover3">
+          <h4>天下大势, 分久必合, 合久必分</h4>
+          <h4>Empires arise from chaos and collapse back into chaos.</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- instructions -->
+
+    <div class="modal fade" id="instruction1" tabindex="-1" aria-labelledby="instructions" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Click on the arrows on the sides to navigate around</h5>
+          </div>
+          <div class="modal-body">
+            <svg id="animation1" xmlns="http://www.w3.org/2000/svg" fill="lightgray" width="200" viewBox="0 0 451.677 451.677" style="enable-background:new 0 0 451.677 451.677;" xml:space="preserve"><path d="M354.209 219.028c-5.132-5.121-11.916-7.881-19.192-7.766-5.668.088-10.92 2.016-15.207 5.216-4.354-10.974-15.075-18.754-27.58-18.754a29.501 29.501 0 0 0-17.7 5.875c-3.435-12.577-14.962-21.849-28.613-21.849a29.49 29.49 0 0 0-16.655 5.13l.001-81.239c0-16.352-13.304-29.655-29.655-29.655-7.916 0-15.363 3.081-20.974 8.681-5.603 5.604-8.689 13.052-8.689 20.974v125.676a40.521 40.521 0 0 0-7.216-.642c-14.746 0-26.743 11.979-26.743 26.703 0 1.202.085 2.432.252 3.653a21.28 21.28 0 0 1-4.895 16.668l-8.853 10.368c-8.433 9.867-10.317 23.835-4.802 35.582l25.936 55.335a56.153 56.153 0 0 0 19.763 22.948c5.18 3.443 9.424 5.948 12.607 7.444a13.318 13.318 0 0 1 5.58 4.925 13.233 13.233 0 0 1 2.071 7.12v23.756a6.5 6.5 0 0 0 6.5 6.5h154.447a6.5 6.5 0 0 0 6.5-6.5c0-14.514 2.064-28.936 6.136-42.864a118.595 118.595 0 0 0 4.764-33.285V237.809c-.002-7.095-2.764-13.764-7.783-18.781zm-9.461 179.637a165.71 165.71 0 0 0-6.53 40.011H196.643V421.42a26.2 26.2 0 0 0-4.099-14.092 26.28 26.28 0 0 0-11.018-9.716c-2.576-1.211-6.361-3.461-10.946-6.509a43.158 43.158 0 0 1-15.187-17.638l-25.938-55.339a20.15 20.15 0 0 1 2.917-21.617l8.855-10.372a34.3 34.3 0 0 0 7.888-26.868 13.84 13.84 0 0 1-.132-1.894c0-7.556 6.165-13.703 13.743-13.703 2.469 0 4.884.323 7.216.962v67.85a6.5 6.5 0 1 0 13 0V105.639c0-4.449 1.733-8.633 4.877-11.777a16.574 16.574 0 0 1 11.786-4.878c9.184 0 16.655 7.471 16.655 16.655l-.001 136.086a6.5 6.5 0 1 0 13 0v-30.488c.091-9.107 7.527-16.489 16.656-16.489 9.185 0 16.656 7.472 16.656 16.656v15.975a6.5 6.5 0 1 0 13 0c0-9.185 7.473-16.657 16.657-16.657s16.656 7.472 16.656 16.658l.002 10.879a6.5 6.5 0 0 0 13-.001c0-7.605 5.98-13.885 13.332-14a13.48 13.48 0 0 1 9.803 3.966 13.46 13.46 0 0 1 3.967 9.583v131.22h.002c0 10.036-1.427 20.008-4.242 29.638zM199.607 48.847a6.5 6.5 0 0 0 6.5-6.5V6.5a6.5 6.5 0 1 0-13 0v35.847a6.5 6.5 0 0 0 6.5 6.5zm47.225 20.024a6.48 6.48 0 0 0 4.596-1.904l25.348-25.347a6.5 6.5 0 1 0-9.191-9.192l-25.348 25.347a6.5 6.5 0 0 0 4.595 11.096zm12.734 41.052a6.5 6.5 0 0 0 6.5 6.5h35.847a6.5 6.5 0 1 0 0-13h-35.847a6.5 6.5 0 0 0-6.5 6.5zm-121.035-1.118a6.5 6.5 0 0 0-6.5-6.5H96.185a6.5 6.5 0 1 0 0 13h35.846a6.5 6.5 0 0 0 6.5-6.5zm8.928-42.628a6.48 6.48 0 0 0 4.596 1.904 6.498 6.498 0 0 0 4.596-11.096l-25.348-25.347a6.498 6.498 0 0 0-9.192 0 6.498 6.498 0 0 0 0 9.192l25.348 25.347z"/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="instruction2" tabindex="-1" aria-labelledby="instructions" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">If on a portable device, slide across the screen</h5>
+          </div>
+          <div class="modal-body">
+            <svg id="animation2" xmlns="http://www.w3.org/2000/svg" fill="lightgray" width="200" viewBox="0 0 424.427 424.427" style="enable-background:new 0 0 424.427 424.427" xml:space="preserve"><path d="M333.646 233.326c6.118-12.561 3.967-28.166-6.453-38.586a33.522 33.522 0 0 0-20.635-9.699c8.358-13.031 6.845-30.606-4.54-41.991a33.507 33.507 0 0 0-19.648-9.591l75.969-75.967c13.129-13.129 13.129-34.493 0-47.622C351.982 3.514 343.528.008 334.528 0c-8.998 0-17.456 3.503-23.819 9.863l-87.433 87.433a46.213 46.213 0 0 0-6.081-7.491c-11.797-11.797-30.978-11.812-42.756-.034a30.58 30.58 0 0 0-2.722 3.126 26.1 26.1 0 0 1-18.704 10.213l-15.95 1.258c-14.744 1.155-27.518 10.89-32.539 24.801l-24.398 67.442a64.793 64.793 0 0 0-2.598 34.837c1.433 7.105 2.86 12.652 4.241 16.48a16.745 16.745 0 0 1 .583 9.343 16.665 16.665 0 0 1-4.494 8.181l-19.713 19.713a6.5 6.5 0 0 0 0 9.192l128.168 128.166a6.5 6.5 0 0 0 9.192 0 180.391 180.391 0 0 1 40.918-30.671 138.06 138.06 0 0 0 31.318-23.475l84.079-84.079c5.674-5.674 8.799-13.215 8.798-21.241-.008-8.202-3.254-15.86-9.139-21.564-4.986-4.833-11.31-7.549-17.833-8.167zm8.981 41.781-84.079 84.079a125.06 125.06 0 0 1-28.371 21.266 193.352 193.352 0 0 0-39.192 28.361L71.935 289.761l15.117-15.117a29.636 29.636 0 0 0 7.99-14.545 29.734 29.734 0 0 0-1.041-16.577c-1.151-3.191-2.44-8.254-3.728-14.644a51.78 51.78 0 0 1 2.08-27.846l24.399-67.446c3.293-9.12 11.665-15.501 21.332-16.259l15.956-1.258a39.117 39.117 0 0 0 28.032-15.308 17.536 17.536 0 0 1 1.562-1.797c6.71-6.71 17.643-6.694 24.371.034a33.008 33.008 0 0 1 5.79 7.782l-68.8 68.8a6.5 6.5 0 0 0 9.192 9.192L319.904 19.057A20.54 20.54 0 0 1 334.523 13a20.574 20.574 0 0 1 14.624 6.063c8.061 8.061 8.061 21.176 0 29.237L240.332 157.113a6.5 6.5 0 0 0 9.192 9.192l14.142-14.142c8.068-7.982 21.125-7.955 29.16.08 8.061 8.061 8.061 21.179 0 29.24l-13.257 13.257a6.5 6.5 0 0 0 9.192 9.192c8.061-8.061 21.178-8.062 29.24 0 8.061 8.062 8.061 21.179-.001 29.241l-9.026 9.03a6.5 6.5 0 0 0 9.193 9.192c6.744-6.743 17.629-6.998 24.264-.567a16.936 16.936 0 0 1 5.187 12.237c0 4.547-1.772 8.823-4.991 12.042z"/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="instruction3" tabindex="-1" aria-labelledby="instructions" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Press ESC for quick navigation with a birdeye view of all pages</h5>
+          </div>
+          <div class="modal-body">
+            <svg id="animation3" xmlns="http://www.w3.org/2000/svg" fill="lightgray" width="200" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 108.95" style="enable-background:new 0 0 122.88 108.95" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><g><path class="st0" d="M23.01,0h76.87c6.33,0,12.08,2.59,16.25,6.76c4.17,4.17,6.76,9.92,6.76,16.25v62.93 c0,6.33-2.59,12.08-6.76,16.25c-4.17,4.17-9.92,6.76-16.25,6.76H23.01c-6.33,0-12.08-2.59-16.25-6.76C2.59,98.02,0,92.27,0,85.94 V23.01c0-6.33,2.59-12.08,6.76-16.25C10.92,2.59,16.68,0,23.01,0L23.01,0z M25.17,33.8h22.65v6.19H33.67v4.61h13.12v5.91H33.67v5.7 h14.58v6.55H25.17V33.8L25.17,33.8z M50.96,56.94l7.54-0.73c0.31,0.94,0.75,1.62,1.31,2.02c0.56,0.4,1.31,0.61,2.24,0.61 c1.02,0,1.81-0.23,2.37-0.69c0.44-0.34,0.66-0.77,0.66-1.28c0-0.58-0.29-1.03-0.86-1.35c-0.41-0.22-1.5-0.5-3.26-0.83 c-2.64-0.49-4.47-0.94-5.5-1.36c-1.03-0.41-1.89-1.12-2.59-2.1c-0.7-0.99-1.05-2.12-1.05-3.39c0-1.38,0.38-2.58,1.13-3.57 c0.76-1,1.8-1.75,3.14-2.25c1.33-0.49,3.12-0.74,5.36-0.74c2.36,0,4.11,0.19,5.23,0.57c1.13,0.38,2.07,0.98,2.82,1.78 c0.75,0.81,1.38,1.89,1.87,3.27l-7.19,0.73c-0.19-0.67-0.5-1.16-0.93-1.48c-0.59-0.42-1.31-0.63-2.16-0.63 c-0.85,0-1.48,0.16-1.87,0.49c-0.39,0.32-0.59,0.71-0.59,1.17c0,0.52,0.25,0.9,0.74,1.17c0.49,0.27,1.58,0.51,3.24,0.71 c2.53,0.3,4.41,0.73,5.64,1.27c1.23,0.54,2.17,1.31,2.82,2.31c0.66,1,0.98,2.1,0.98,3.3c0,1.21-0.34,2.39-1.04,3.54 c-0.69,1.15-1.78,2.06-3.26,2.74c-1.49,0.68-3.51,1.02-6.08,1.02c-3.62,0-6.2-0.55-7.74-1.65C52.39,60.52,51.4,58.96,50.96,56.94 L50.96,56.94z M90.48,54.56l7.23,0.85c-0.4,1.6-1.05,2.98-1.96,4.15c-0.91,1.17-2.07,2.08-3.49,2.72 c-1.41,0.65-3.21,0.97-5.39,0.97c-2.11,0-3.86-0.21-5.27-0.62c-1.4-0.42-2.6-1.09-3.62-2.02c-1.01-0.92-1.8-2.02-2.37-3.27 c-0.57-1.25-0.86-2.91-0.86-4.98c0-2.16,0.35-3.96,1.05-5.39c0.51-1.06,1.21-2,2.1-2.84c0.89-0.84,1.79-1.46,2.73-1.87 c1.49-0.65,3.39-0.97,5.7-0.97c3.25,0,5.71,0.61,7.42,1.83c1.7,1.23,2.89,3.01,3.58,5.37l-7.15,1.01c-0.22-0.9-0.63-1.57-1.22-2.03 c-0.59-0.45-1.39-0.68-2.39-0.68c-1.26,0-2.28,0.48-3.06,1.43c-0.78,0.96-1.17,2.4-1.17,4.34c0,1.73,0.39,3.03,1.16,3.93 c0.77,0.9,1.75,1.34,2.95,1.34c0.99,0,1.84-0.27,2.51-0.8C89.63,56.49,90.14,55.67,90.48,54.56L90.48,54.56z M4.95,77.41 c0.86,3.22,2.57,6.11,4.86,8.41c3.38,3.39,8.05,5.49,13.19,5.49h76.87c0.21,0,0.41,0,0.62-0.01l1.29-0.09 c4.33-0.44,8.24-2.38,11.19-5.29l0.09-0.1c2.3-2.3,4-5.19,4.86-8.41v-54.4c0-4.96-2.03-9.47-5.31-12.75 c-3.27-3.27-7.79-5.31-12.75-5.31H23.01c-4.96,0-9.48,2.03-12.75,5.3c-3.27,3.27-5.3,7.79-5.3,12.75V77.41L4.95,77.41z"/></g></svg>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="instruction4" tabindex="-1" aria-labelledby="instructions" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Also use the space bar or the arrow keys on keyboard to move faster</h5>
+          </div>
+          <div class="modal-body">
+            <svg id="animation4" width="200" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><polygon fill="lightgray" points="40 288 40 416 464 416 464 288 432 288 432 384 72 384 72 288 40 288" class="ci-primary"/></svg>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="instruction5" tabindex="-1" aria-labelledby="instructions" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Sometimes there are pages under the main thread, don't miss them out! Always remember to check for downward arrows.</h5>
+          </div>
+          <div class="modal-body">
+            <svg id="animation5" width="200" fill="lightgray" viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"/></svg>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="instruction6" tabindex="-1" aria-labelledby="instructions" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">That's it, enjoy</h5>
+          </div>
+          <div class="modal-body text-white">
+            PS: There are lots of details hidden in the pages! For instance, try to find out what each of the different colors of the dynasty progress bars mean.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Let's go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--  -->
+
+
+    <button type="button" id="backbtn" onclick="changePage(2)" class="btn btn-outline-secondary" style="position: absolute; top: 0.5rem; left: 0.5rem; z-index: 999; display: none;">Exit</button>
+
+    <div id="mainContainer" class="d-none flex-row align-items-stretch">
 
       <div class="flex-grow-1" style="height: 100vh;">
 
@@ -75,18 +230,22 @@
               <p class="fs-2">This is a story in central China...</p>
               <p class="fs-2">...where everything began in 5000BC</p>
             </section>
-            <section>
-              <h4>Yangtze river culture</h4>
-              <p>Around 5000BC</p>
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>史前传说时期</p>
+              <h4>Mythical Prehistoric Period</h4>
+              <p>Around 3000BC</p>
             </section>
             <section>
               <div class="card mb-3 border-danger" style="border-width: 2px;">
-                <p class="card-header text-primary">Three Sovereigns and Five Emperors</p>
+                <p class="card-header text-danger">Three Sovereigns and Five Emperors</p>
                 <div class="card-body p-1">
-                  <h5 class="card-title">三皇五帝时期</h5>
-                  <h6 class="card-subtitle text-muted">~3000BC - 2000BC</h6>
+                  <h5 class="card-title text-primary">三皇五帝时期</h5>
+                  <h6 class="card-subtitle text-muted">~3000BC - ~2070BC</h6>
                 </div>
-                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 30vh; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/shwd.jpeg');" alt="Historical map China 5000BC"></div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/shwd.jpeg');"  ></div>
                 <div class="card-body fs-6 p-2">
                   <p class="card-text m-0">Prehistorical period, based on legends and tales. Certain historical evidence on culture has been found.</p>
                 </div>
@@ -97,46 +256,802 @@
                 </ul>
               </div>
               <div class="progress-holder" style="height:0.5rem !important;">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 14.25%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </section>
 
-            <section>Slide 5</section>
-            <section>Slide 6</section>
+<!--  -->
+
+
             <section data-transition="convex">
-              <h4>
-                The first emperor of China
-              </h4>
-              <p>Qin Dynasty</p>
+              <p>夏朝</p>
+              <h4>Xia Dynasty</h4>
+              <p>～2070BC - ～1600BC</p>
             </section>
-            <section data-transition="zoom">
-              <div class="card mb-3 border-warning" style="border-width: 2px;">
-                <p class="card-header text-primary">Qin Emperor I - Ying Zheng</p>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Xia Dynasty</p>
                 <div class="card-body p-1">
-                  <h5 class="card-title">秦始皇 - 嬴政</h5>
-                  <h6 class="card-subtitle text-muted">18/2/259BC － 11/7/210BC</h6>
+                  <h5 class="card-title text-primary">夏朝</h5>
+                  <h6 class="card-subtitle text-muted">～2070BC - ～1600BC</h6>
                 </div>
-                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 30vh; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/qsh.png');" alt="Illustration of Qin Emperor I"></div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/xia.jpeg');"  ></div>
                 <div class="card-body fs-6 p-2">
-                  <p class="card-text m-0">The first rightfully crowned emperor who unified China — the first time in history</p>
-                  <p class="card-text m-0">Initiated the Cultural reform - The grand age of unification</p>
+                  <p class="card-text m-0">First recognised dynasty with an established court order and Emperor, but might be entirely mythical.</p>
                 </div>
                 <ul class="list-group list-group-flush fs-6 m-2">
-                  <li class="list-group-item">- Unification of measurements and language</li>
-                  <li class="list-group-item">- Military and social reform</li>
-                  <li class="list-group-item">- Construction of roads and defense strucutres (i.e. Great Wall)</li>
+                  <li class="list-group-item">- First patrimony dynasty in Chinese history</li>
+                  <li class="list-group-item">- Opened the precedence of nobility</li>
+                  <li class="list-group-item">-	First slavery-system based society</li>
                 </ul>
               </div>
               <div class="progress-holder" style="height:0.5rem !important;">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 44.8%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 18.6%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </section>
-            <section>Slide 9</section>
-            <section>Slide 10</section>
 
-            <section data-auto-animate>
+<!--  -->
+
+            <section data-transition="convex">
+              <p>商朝</p>
+              <h4>Shang Dynasty</h4>
+              <p>～1600BC - 1046BC</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Shang Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">商朝</h5>
+                  <h6 class="card-subtitle text-muted">～1600BC - 1046BC</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/shang.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">First dynasty to be recorded in the form of writings. Creates Bronze artifacts and music instruments.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Invention of script, leading the way of Chines characters for millenia afterwards</li>
+                  <li class="list-group-item">-	Transition from loose tribal culture to central agricultural society</li>
+                  <li class="list-group-item">-	Early appearance of Rites and Music</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 28%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+            
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>西周</p>
+              <h4>Zhou Dynasty (Western)</h4>
+              <p>1046BC - 770BC</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Western Zhou Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">西周</h5>
+                  <h6 class="card-subtitle text-muted">1046BC - 770BC</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/xzhou.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Establishment of order, morals, rites, and music, creating a Chinese feudalistic system lasting until near past.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Peak of Rites and Music</li>
+                  <li class="list-group-item">-	Promoting art and knowledge</li>
+                  <li class="list-group-item">-	Change from slavery-system to feudal system</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 39%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>东周</p>
+              <h4>Zhou Dynasty (Eastern)</h4>
+              <p>770BC – 256BC</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Eastern Zhou Dynasty</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">东周</h5>
+                    <h6 class="card-subtitle text-muted">770BC – 256BC</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/zg.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Central power vacuum led for all dukes to proclaime their own territories. Time of Sun Tzu and Confucius.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	Central power dilution, rise of kings and warlords</li>
+                    <li class="list-group-item">-	Divided into Spring and Fall period and Warring States period</li>
+                    <li class="list-group-item">-	Longest dynasty to survive in history (technically)</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-warning bg-warning" role="progressbar" style="width: 44.6%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <p>The Time of dukes and warlords</p>
+                <div class="d-flex d-flex-one justify-content-center align-items-center">
+                  <ul class="list-group fs-6 m-3" style="width: 50%;">
+                    <div class="d-flex justify-content-around">
+                      <div>Spring and Fall</div>
+                      <div>770BC – 475BC</div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Qi - 齐
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Jin - 晋
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Lu - 鲁
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Chu - 楚
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Qin - 秦
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Yan - 燕
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Zhen - 郑
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Chen - 陈
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Song - 宋
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Wu - 吴
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Yue - 越
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Cao - 曹
+                    </li>
+                  </ul>
+                  <ul class="list-group fs-5 m-3" style="width: 50%;">
+                    <div class="d-flex justify-content-around">
+                      <div>Warring States</div>
+                      <div>475BC – 221BC</div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Qin - 秦
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Chu - 楚
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Qi - 齐
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Yan - 燕
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Zhao - 赵
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Wei - 魏
+                    </li>
+                    <li class="list-group-item d-flex justify-content-center align-items-center">
+                      Han - 韩
+                    </li>
+                  </ul>
+                </div>
+                
+              </section>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex" data-auto-animate>
+                <p>秦朝</p>
+                <h4>Qin Dynasty</h4>
+                <p>221BC – 206BC</p>
+            </section>
+
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Qin Dynasty</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">秦朝</h5>
+                    <h6 class="card-subtitle text-muted">221BC – 206BC</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/qin.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">First dynasty to officially unify China, both the land and the culture including script and money.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">- Unification of measurements and language</li>
+                    <li class="list-group-item">- Military and social reform</li>
+                    <li class="list-group-item">- Construction of roads and defense strucutres (i.e. Great Wall)</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 55.6%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <div class="card mb-3 border-warning" style="border-width: 2px;">
+                  <p class="card-header text-danger">Qin Emperor I - Ying Zheng</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">秦始皇 - 嬴政</h5>
+                    <h6 class="card-subtitle text-muted">18/2/259BC － 11/7/210BC</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/qsh.jpg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-2">The first rightfully crowned emperor who unified China — the first time in history</p>
+                    <p class="card-text m-2">Initiated the Cultural reform - The grand age of unification</p>
+                    <p class="card-text m-2">Very controversal individual</p>
+                  </div>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 55.6%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+            </section>
+
+<!--  -->
+
+
+            <section data-transition="convex">
+              <p>西汉</p>
+              <h4>Han Dynasty (Western)</h4>
+              <p>206BC - 9(AD)</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Western Han Dynasty</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">西汉</h5>
+                    <h6 class="card-subtitle text-muted">206BC - 9(AD)</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/xhan.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">First peak of central Chinese culture; Chinese art starts to prosper. Opening of new trade routes to the west.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	First era of expansion</li>
+                    <li class="list-group-item">-	Silk road – Development of trade and communication</li>
+                    <li class="list-group-item">-	Invention of compass and black powder </li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 55.9%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <div class="card mb-3 border-warning" style="border-width: 2px;">
+                  <p class="card-header text-danger">Han Emeperor I - Liu Bang</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">汉高祖 - 刘邦</h5>
+                    <h6 class="card-subtitle text-muted">~256BC － 6/1/195BC</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/hgz.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-2">Founding father of Han.</p>
+                    <p class="card-text m-2">Regarded as with some revolutionary ruling ideologies and legal applications.</p>
+                  </div>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 55.9%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <div class="card mb-3 border-warning" style="border-width: 2px;">
+                  <p class="card-header text-danger">Han Emeperor VII - Liu Che</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">汉武帝 - 刘彻</h5>
+                    <h6 class="card-subtitle text-muted">156BC － 29/3/87BC</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/hwd.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-2">Highly praised for his exceptional ruling skills, warring techniques, ideology and benerosity</p>
+                    <p class="card-text m-2">Possibly the most well known Han Emperor besides the Founding Father of Han.</p>
+                  </div>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 56.9%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+            </section>
+
+<!--  -->
+
+            <!-- <section data-transition="convex">
+              <p>新朝</p>
+              <h4>Xin Dynasty</h4>
+              <p>9 - 23</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Xin Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">新朝</h5>
+                  <h6 class="card-subtitle text-muted"></h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/shwd.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0"></p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">Led by Wang Mang, a solo emperor for some years</li>
+                  <li class="list-group-item">Only dynasty which is considered "stolen" instead of "taken"</li>
+                  <li class="list-group-item">Frankly saying, not an important time period</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 14.25%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section> -->
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>东汉</p>
+              <h4>Han Dynasty (Eastern)</h4>
+              <p>23 - 220</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Eastern Han Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">东汉</h5>
+                  <h6 class="card-subtitle text-muted">23 - 220</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/dhan.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Reestablishment of order after political instability. </p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Reunion after national breakdown and civil war</li>
+                  <li class="list-group-item">-	Establishment of court order and law-based society</li>
+                  <li class="list-group-item">-	Biggest area of control at the time</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 60.5%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>三国</p>
+              <h4>Three Kingdoms</h4>
+              <p>220 - 380</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Three Kingdoms</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">三国</h5>
+                    <h6 class="card-subtitle text-muted">220 - 380</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/sg.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Famous period in Chinese history, known for its complicity and classical war strategies.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	Great era of war and chaos</li>
+                    <li class="list-group-item">-	Wei, Shu, Wu, the three kingdoms battling each other for a century</li>
+                    <li class="list-group-item">-	Eventually ended in unification again</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 64.4%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <p>The Three Kingdoms</p>
+                <ul class="list-group" style="width: 80%;">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Wei - 魏
+                    <span class="badge bg-light rounded-pill">220 - 265</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Shu - 蜀
+                    <span class="badge bg-light rounded-pill">221 - 263</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Wu - 吴
+                    <span class="badge bg-light rounded-pill">222 - 280</span>
+                  </li>
+                </ul>
+              </section>
+            </section>
+            
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>西晋</p>
+              <h4>Jin Dynasty (Western)</h4>
+              <p>265 - 316</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Western Jin Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">西晋</h5>
+                  <h6 class="card-subtitle text-muted">265 - 316</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/xjin.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Period of unification. Period of lots of famous philosophers, painters, and poets.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Trades with Northern and Western tribes</li>
+                  <li class="list-group-item">-	Peaceful interactions with nearby states</li>
+                  <li class="list-group-item">-	Central control over land rather than partial military dilution</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 65.3%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>南北朝</p>
+              <h4>Northern and Southern States</h4>
+              <p>304 - 589</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Northern and Southern States</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">南北朝</h5>
+                    <h6 class="card-subtitle text-muted">304 - 589</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/nbc.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Consists of three smaller periods; very chaotic period of warlords rising up everywhere.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	Became chaotic again, full of war and conflicts</li>
+                    <li class="list-group-item">-	More than 20 different states and tribes came into power at different times</li>
+                    <li class="list-group-item">-	Generally divided into the northern or southern part.</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 66%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <p>Chaos Overall</p>
+                <div class="d-flex d-flex-one justify-content-center align-items-center">
+                  <ul class="list-group fs-5 m-3" style="width: 50%;">
+                    <div class="d-flex justify-content-around">
+                      <div>Northern Section</div>
+                      <div>304 – 581</div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Five Tribes and Sixteen States - 五胡十六国
+                      <span class="badge bg-light rounded-pill">304 - 439</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Northern Wei - 北魏
+                      <span class="badge bg-light rounded-pill">386 - 534</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Three Kingdoms - 后三国
+                      <span class="badge bg-light rounded-pill">534 - 581</span>
+                    </li>
+                  </ul>
+                  <ul class="list-group fs-5 m-3" style="width: 50%;">
+                    <div class="d-flex justify-content-around">
+                      <div>Southern Section</div>
+                      <div>317 - 589</div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Eastern Jin - 东晋
+                      <span class="badge bg-light rounded-pill">317 - 420</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Song - 后宋
+                      <span class="badge bg-light rounded-pill">420 - 479</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Qi - 后齐
+                      <span class="badge bg-light rounded-pill">479 - 502</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Liang - 后梁
+                      <span class="badge bg-light rounded-pill">502 - 557</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Chen - 后陈
+                      <span class="badge bg-light rounded-pill">557 - 589</span>
+                    </li>
+                  </ul>
+                </div> 
+              </section>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>隋朝</p>
+              <h4>Sui Dynasty</h4>
+              <p>581 - 618</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Sui Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">隋朝</h5>
+                  <h6 class="card-subtitle text-muted">581 - 618</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/sui.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Time of infrastructure and tradings. Merchants and third sector begin to prosper</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Construction of infrastructure and canals</li>
+                  <li class="list-group-item">-	Development of economy and business</li>
+                  <li class="list-group-item">-	Unification again</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 71.6%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>唐朝</p>
+              <h4>Tang Dynasty</h4>
+              <p>618 - 907</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Tan Dynasty</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">唐朝</h5>
+                    <h6 class="card-subtitle text-muted">618 - 907</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/tang.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Very well-known period for art and poems. The most important time for Chinese poets.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	Second Era of Expansion</li>
+                    <li class="list-group-item">-	The new silk road — connection to the west and north</li>
+                    <li class="list-group-item">-	Known for poems in the period</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 72.4%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <div class="card mb-3 border-warning" style="border-width: 2px;">
+                  <p class="card-header text-danger">Li Bai</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">李白</h5>
+                    <h6 class="card-subtitle text-muted">19/5/701 - 30/11/762</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/lb.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-2">The most well known Chinese poet ever.</p>
+                    <p class="card-text m-2">Possibly also the most important person on Chinese culture</p>
+                  </div>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 72.4%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>五代十国</p>
+              <h4>Five Generations of Ten States</h4>
+              <p>907 - 979</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Five Generations of Ten States</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">五代十国</h5>
+                    <h6 class="card-subtitle text-muted">907 - 960</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/wdsg.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Chaos again, with fifteen different states rising into power over the period of 60 years.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	Huge numbers of chaotic states</li>
+                    <li class="list-group-item">-	5 central dynasties in control with 10 states acting in the north</li>
+                    <li class="list-group-item">-	There were states ascending and descending the great state of China</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 78%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <p>Another major period of chaos</p>
+                <div class="d-flex d-flex-one justify-content-center align-items-center">
+                  <ul class="list-group fs-5 m-3" style="width: 50%;">
+                    <div class="d-flex justify-content-around">
+                      <div>Five Central Dynasties</div>
+                      <div>907 - 960</div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Liang - 后梁
+                      <span class="badge bg-light rounded-pill">907 - 923</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Tang - 后唐
+                      <span class="badge bg-light rounded-pill">923 - 936</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Jin - 后晋
+                      <span class="badge bg-light rounded-pill">936 - 946</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Han - 后汉
+                      <span class="badge bg-light rounded-pill">947 - 950</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Zhou - 后周
+                      <span class="badge bg-light rounded-pill">951 - 960</span>
+                    </li>
+                  </ul>
+                  <ul class="list-group fs-5 m-3" style="width: 50%;">
+                    <div class="d-flex justify-content-around">
+                      <div>Ten Northern States</div>
+                      <div>902 - 979</div>
+                    </div>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Early Shu - 前蜀
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Late Shu - 后蜀
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Wu - 吴
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Southern Tang - 南唐
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Wuyue - 吴越
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Min - 闽
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Chu - 楚
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Southern Han - 南汉
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Southern Ping - 南平
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Northern Han - 北汉
+                    </li>
+                  </ul>
+                </div> 
+              </section>
+            </section>
+
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>北宋</p>
+              <h4>Song Dynasty (Northern)</h4>
+              <p>960 - 1127</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Song Dynasty (Northern)</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">北宋</h5>
+                  <h6 class="card-subtitle text-muted">960 - 1127</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/bsong.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Culturally the strongest while militarly the weakest dynasty. Time of Ci poems.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Era of discovery and scientific innovation</li>
+                  <li class="list-group-item">-	Superior levels of mathematics and science</li>
+                  <li class="list-group-item">-	Invention of modern paper and flexible printing.</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 79.2%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+            
+
+            <section data-transition="convex">
+              <p>南宋</p>
+              <h4>Song Dynasty (Southern)</h4>
+              <p>1127 - 1276</p>
+            </section>
+            <section>
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">Song Dynasty (Southern)</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">南宋</h5>
+                    <h6 class="card-subtitle text-muted">1127 - 1276</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/bsong.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Power vaccum led to frequent invasions. Downfall of Plainland Culture. Constant war.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	Central China’s power is weakening from this point on</li>
+                    <li class="list-group-item">-	Norman tribes start to invade more than ever</li>
+                    <li class="list-group-item">-	The downfall of Central Plainland cultures</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 82.5%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <div class="card mb-3 border-warning" style="border-width: 2px;">
+                  <p class="card-header text-danger">Yue Fei</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">岳飞</h5>
+                    <h6 class="card-subtitle text-muted">24/3/1103 - 27/1/1142</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/yf.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-2">Famous general battling against northern invasions and won crucial time for China for many years.</p>
+                    <p class="card-text m-2">Sadly got framed-up by Qin Hui and blindly excecuted by the Emperor, leaving an eternal regret for the people.</p>
+                  </div>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 82.5%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+            </section>
+
+            <!-- <section data-auto-animate>
               <h4>The Song Dynasty</h4>
-              <p class="fs-4">960 - 1279</p>
+              <p class="fs-4">1127 - 1276</p>
             </section>
             <section data-auto-animate data-transition="zoom">
               <h4 class="text-danger">The Song Dynasty</h4>
@@ -146,71 +1061,287 @@
               <div class="progress-holder" style="height:0.5rem !important;">
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 84.9%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
+            </section> -->
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>元朝</p>
+              <h4>Yuan Dynasty</h4>
+              <p>1279 - 1368</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Yuan Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">元朝</h5>
+                  <h6 class="card-subtitle text-muted">1279 - 1368</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/yuan.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Mongol led dynasty. Known for its drama and art pieces.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	The Chinese sector of the Mongol empire</li>
+                  <li class="list-group-item">-	Fell apart quickly following the Mongol’s collapse</li>
+                  <li class="list-group-item">-	Known for music and drama</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 85.6%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </section>
 
-            <section>Slide 25</section>
-            <section>Slide 26</section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>明朝</p>
+              <h4>Ming Dynasty</h4>
+              <p>1368 - 1644</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Ming Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">明朝</h5>
+                  <h6 class="card-subtitle text-muted">1368 - 1644</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/ming.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Era of nautical explorations and traderoutes. Earliest form of globalisation.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Last peak of science and mathematics</li>
+                  <li class="list-group-item">-	Known for the earliest forms of modern novels</li>
+                  <li class="list-group-item">-	The last Han-people led dynasty</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 87.4%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>清朝</p>
+              <h4>Qing Dynasty</h4>
+              <p>1636 – 1912</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Qing Dynasty</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">清朝</h5>
+                  <h6 class="card-subtitle text-muted">1636 – 1912</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/qing.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Last feudal dynasty. Scientific and mathematical advancements connecting history and present</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2 border-danger">
+                  <li class="list-group-item">- The very last feudal dynasty in Chinese history</li>
+                  <li class="list-group-item">- A period of transition between Ancient and Modern history</li>
+                  <li class="list-group-item">- Change in cultural beliefs: Mainstream culture becomes Manchurian at the time</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 92.7%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>中华民国</p>
+              <h4>Republic of China</h4>
+              <p>1912 – 1949</p>
+            </section>
+            <section>
+              <div class="card mb-3 border-danger" style="border-width: 2px;">
+                <p class="card-header text-danger">Republic of China</p>
+                <div class="card-body p-1">
+                  <h5 class="card-title text-primary">中华民国</h5>
+                  <h6 class="card-subtitle text-muted">1912 – 1949</h6>
+                </div>
+                <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/zhmg.jpeg');"  ></div>
+                <div class="card-body fs-6 p-2">
+                  <p class="card-text m-0">Westernized society marking a semi-feudal semi-colonial period of time.</p>
+                </div>
+                <ul class="list-group list-group-flush fs-6 m-2">
+                  <li class="list-group-item">-	Suffered from a long period of division rival warlord </li>
+                  <li class="list-group-item">-	There were 16 big groups, 40+ smaller groups, and up to hundreds of individual warlords.</li>
+                  <li class="list-group-item">- Establishment of multiple governments, led first by Sun Yat-sen then by Chiang Kai-shek.</li>
+                </ul>
+              </div>
+              <div class="progress-holder" style="height:0.5rem !important;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 98.2%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </section>
+
+
+
+<!--  -->
+
+            <section data-transition="convex">
+              <p>中华人民共和国</p>
+              <h4>People's Republic of China</h4>
+              <p>1949 - Now</p>
+            </section>
+            <section data-transition="slide-in zoom-out">
+              <section>
+                <div class="card mb-3 border-danger" style="border-width: 2px;">
+                  <p class="card-header text-danger">People's Republic of China</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">中华人民共和国</h5>
+                    <h6 class="card-subtitle text-muted">1949 - Now</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/zhrmghg.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-0">Fully sovereign country taking part in important aspects of the modern society.</p>
+                  </div>
+                  <ul class="list-group list-group-flush fs-6 m-2">
+                    <li class="list-group-item">-	A modern socialism-based world-leading country currently led by Xi Jinping</li>
+                    <li class="list-group-item">-	Cultural, economical, structural and social reforms</li>
+                    <li class="list-group-item">-	The first modern society connected state founded by Chairman Mao Zhedong</li>
+                  </ul>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 99%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <section>
+                <div class="card mb-3 border-warning" style="border-width: 2px;">
+                  <p class="card-header text-danger">Mao Zhedong</p>
+                  <div class="card-body p-1">
+                    <h5 class="card-title text-primary">毛泽东</h5>
+                    <h6 class="card-subtitle text-muted">24/3/1103 - 27/1/1142</h6>
+                  </div>
+                  <div class="d-block user-select-none m-auto" style="width: 30rem; height: 300px; background-size: cover; background-repeat: no-repeat; background-position: center; background-image: url('/resources/background/mzd.jpeg');"  ></div>
+                  <div class="card-body fs-6 p-2">
+                    <p class="card-text m-2">Taken as the founding father of the modern People's Republic of China, along with Zhou Enlai, Zhu De, Deng Xiaoping et al.</p>
+                    <p class="card-text m-2">Military strategist, general, poet, writer, painter, and most importantly, natural leader.</p>
+                  </div>
+                </div>
+                <div class="progress-holder" style="height:0.5rem !important;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 99%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+            </section>
+            
+
+<!--  -->
+
+            <section data-transition="zoom">
+              <h4>What comes next?</h4>
+              <p>Future?</p>
+            </section>
+            <section data-transition="zoom-in fade-out" data-auto-animate>
+              <p>End</p>
+              <p class="fs-5">Wait! Don't leave yet! There's something more!</p>
+            </section>
+            <section data-transition="fade-in" data-auto-animate>
+              <p>End</p>
+              <h4>Extended Reading List</h4>
+              <div class="accordion border-danger" id="accordionExample" style="margin-bottom: 10rem;">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      More on poems and Ci`s
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body fs-6">
+                      <a href="https://www.docin.com/p-108562779.html" target="_blank"><strong>300 Tang Poems</strong></a>
+                      <br>
+                      <span>A collection on some of the greatest poems in Tang dynasty</span>
+                    </div>
+                    <div class="accordion-body fs-6">
+                      <a href="http://www.shuzhai.org/gushi/songci300/" target="_blank"><strong>300 Song Ci`s</strong></a>
+                      <br>
+                      <span>A collection on some of the greatest Ci`s in Song dynasty</span><span class="text-muted"> (a translator might be needed)</span>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      More on the history of Spring and Fall, the Warring States, and the Three Kingdoms
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body fs-6">
+                      <a href="https://so.gushiwen.cn/guwen/book_5.aspx" target="_blank"><strong>Historical Records</strong></a>
+                      <br>
+                      <span>The earliest records of Eastern Zhou and the affairs of all states at the time</span><span class="text-muted"> (a translator might be needed)</span>
+                    </div>
+                    <div class="accordion-body fs-6">
+                      <a href="http://kekenet.com/read/essay/sanguo/" target="_blank"><strong>Romance of the Three Kingdoms</strong></a>
+                      <br>
+                      <span>A edited novel on the war and peace during the Three Kingdom periods. Second most classical Chinese novel</span><span class="text-muted"> (shortened and simplified)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      More on tranditional myths and social structures in the past
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body fs-6">
+                      <a href="http://www.dushu369.com/gudianmingzhu/xyj/" target="_blank"><strong>Journey to the West</strong></a>
+                      <br>
+                      <span>Commonly known as <i><strong>Monkey King</strong></i>, a fundamental piece of novel in modern Chinese literature. First most classical Chinese novel</span><span class="text-muted"> (a translator might be needed)</span>
+                    </div>
+                    <div class="accordion-body fs-6">
+                      <a href="http://www.purepen.com/hlm/" target="_blank"><strong>Dream of the Red Chamber</strong></a>
+                      <br>
+                      <span>Highly praised chapter style novel reflecting the daily lives of folks in the Qing dynasty. Fourth most classical Chinese novel</span><span class="text-muted"> (a translator might be needed)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
 
-
-
-
-
-
-
-
-        <!-- <div class="splide d-block" style="height: 100%;">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">1</li>
-              <li class="splide__slide">2</li>
-              <li class="splide__slide">3</li>
-              <li class="splide__slide">Slide 01</li>
-              <li class="splide__slide">Slide 02</li>
-              <li class="splide__slide">Slide 03</li>
-            </ul>
-          </div>
-        </div>
-        <script>
-          document.addEventListener( 'DOMContentLoaded', function() {
-            var splide = new Splide( '.splide' );
-            splide.mount();
-          } );
-        </script>
-
-        <script>
-          var splide = new Splide( '.splide', {
-            type   : 'loop',
-            perPage: 3,
-            perMove: 1,
-            focus  : 'center',
-            gap    : '2rem',
-            breakpoints: {
-              640: {
-                perPage: 2,
-                gap    : '.7rem',
-                height : '6rem',
-              },
-              480: {
-                perPage: 1,
-                gap    : '.7rem',
-                height : '6rem',
-              },
-            },
-          } );
-          
-          splide.mount();
-        </script>
-        -->
       </div>
     </div>
+
+
+    <!-- // if() {
+      //   var toastLiveExample = document.getElementById('liveToast');
+      //   var toast = new bootstrap.Toast(toastLiveExample);
+      //   toast.show();
+      // }; -->
+
+    <!-- <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
+    </div> -->
 
     <script src="/reveal.js/dist/reveal.js"></script>
     <script>
       Reveal.initialize({
         backgroundTransition: 'slide',
-        autoSlide: 5000,
+        autoSlide: false,
         transitionSpeed: 'slow',
       });
     </script>
