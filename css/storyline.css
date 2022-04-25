@@ -46,7 +46,8 @@ canvas {
 #story-header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/resources/background/great_wall.jpeg') no-repeat center;
     background-size: cover;
-    margin: 5vw 5vw 0vh 5vw;
+    margin: 5vh 5vw 5vh 5vw;
+    height: 80vh;
 }
 
 .d-flex-one {
